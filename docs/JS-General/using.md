@@ -7,13 +7,24 @@
 function create(ctx, state, train) {
 	state.oldSpeed = train.speed()*3.6*20;
 	state.first = true;
+	state.sendedRouteId = false;
 }
 
 
 function render(ctx, state, train) {
 	train.getBlockDistance(train.id());
-	let speed = train.speed()*3.6*20;
 	let stoppingIndex = train.getServerResponse(train.id(), "getBlockDistance");
+	
+	if (!state.sendedRouteId) {
+		try {
+			let routeId = train.getThisRoutePlatforms().get(0).route.id;
+			train.sendRequestToServer(train.id(), "setRouteIdToServer", routeId);
+			state.sendedRouteId = true;
+			state.routeId = routeId;
+
+		} catch {}
+	}
+	let speed = train.speed()*3.6*20;
 	train.sendRequestToServer(train.id(), "getNextPlatformIndex");
 	let railIndex = train.getRailIndex(train.railProgress(), true);
 	let nextPlatformIndex = train.getServerResponse(train.id(), "getNextPlatformIndex");
@@ -21,6 +32,7 @@ function render(ctx, state, train) {
 	let safeDistance = stoppingIndex - railIndex;
 	ctx.setDebugInfo("NextStoppingIndex", stoppingIndex);
 	ctx.setDebugInfo("railIndex", railIndex);
+	ctx.setDebugInfo("TEMP", state.routeId);
 	ctx.setDebugInfo("前方車両(赤信号や駅)までの閉塞単位距離", safeDistance);
 	ctx.setDebugInfo("駅までの閉塞単位距離", nextPlatformIndexSubRailIndex);
 	signalSpeed = maxSpeed;
