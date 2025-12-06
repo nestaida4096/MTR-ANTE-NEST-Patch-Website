@@ -20,4 +20,4 @@
 | - | - |
 | `"getBlockDistance"` | 前方列車までの閉塞単位の距離を取得します。|
 | `"getNextPlatformIndex"` | 次駅までの閉塞単位の距離を取得します。|
-| `setRouteIdToServer` | routeIdをサーバーに送信します。|
+| `"setRouteIdToServer"` | routeIdをサーバーに送信します。|
