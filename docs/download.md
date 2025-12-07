@@ -1,4 +1,8 @@
 # ダウンロード
+*Fabric Loader 0.17.2以上が必要です*
+
+**minecraftバージョンが`1.19.2`で、かつMTRバージョンが`1.19.2-3.2.2-hotfix-1`である必要があります。**
+
 [NEST Technologyの公式Discord](https://discord.gg/x8HBB3gaE6)からダウンロードできます。
 
 !!! danger "Mod公開サイトへの公開について"
