@@ -49,4 +49,4 @@ function calcInternalValue(kmhPerSec) {
 | `"getBlockDistance"` | 前方列車までの閉塞単位の距離を取得します。|
 | `"getNextPlatformIndex"` | 次駅までの閉塞単位の距離を取得します。|
 | `"setRouteIdToServer"` | routeIdをサーバーに送信します。|
-| `"allTrainPositions"` | サーバー内にあるすべての列車のrailIndexを取得します。\n`Map<Long(Siding ID), Map<Long(Train ID), Integer(railIndex)>>`の状態で取得できます。|
+| `"allTrainPositions"` | サーバー内にあるすべての列車のrailIndexを取得します。`Map<Long(Siding ID), Map<Long(Train ID), Integer(railIndex)>>`の状態で取得できます。|
