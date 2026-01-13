@@ -12,7 +12,7 @@
 | メソッド名 | 説明 |
 | - | - |
 | `train.setSpeed(long id, float speed): void` | 速度を変更します。単位はm/tickです。|
-| `setAcceleration(long id, float acceleration): void` | 加速度(減速度)を変更します。km/h/sからの値の変換は以下のコードを確認してください。|
+| `train.setAcceleration(long id, float acceleration): void` | 加速度(減速度)を変更します。km/h/sからの値の変換は以下のコードを確認してください。|
 ```js
 /**
  * 加速度（km/h/s）を内部値に変換する
