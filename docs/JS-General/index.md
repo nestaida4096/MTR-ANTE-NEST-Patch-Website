@@ -42,6 +42,10 @@ function calcInternalValue(kmhPerSec) {
 | `train.sendRequestToServer(long id, String requestType, String body): void` | idとrequestType、さらにbodyをサーバーに送信します。bodyはString型でなければなりません。|
 | `train.getServerResponse(long id, String responseType): Object` | サーバーへ送信したリクエストの結果を返します。原則、`responseType`は`requestType`と共通になります。 |
 | `train.runServerScript(long id, String scriptText): void` | 利用可能な場合、サーバー側で`scriptText`の内容を実行します。**危険なコードは実行しないようにしてください。** |
+| `train.setLinkingMode(long id, long mode): void` | 連結モードを設定します。詳しくは[こちらをご覧ください](Linking/)。 |
+| `train.getLinkingMode(long id): Long` | 現在の連結モードを取得します。 |
+| `train.Unlinking(long id): void` | 連結を解除します。 |
+
 
 ## `requestType`の一覧と説明
 | タイプ名 | 説明 |
